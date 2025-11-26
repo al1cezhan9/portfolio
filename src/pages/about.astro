@@ -1,57 +1,65 @@
 ---
-import '../styles/global.css'
+import "../styles/global.css";
+import Navigation from "../components/navigation.astro";
+import Footer from '../components/Footer.astro';
+
 const pageTitle = "About";
 const identity = {
   firstName: "Alice",
   location: "Massachusetts",
   occupation: "Student",
-  hobbies: ["thinking out loud", "thinking in silence", "thinking about thinking"],
+  hobbies: [
+    "thinking out loud",
+    "thinking in silence",
+    "thinking about thinking",
+  ],
 };
 const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
 const finished = false;
-const goal = 3;
-// const titleColor = "navy";
+const lastUpdated = "11-26-2025"
 ---
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>{pageTitle}</title>
-    <!-- <style define:vars={{titleColor}}>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>{pageTitle}</title>
+  <!-- <style define:vars={{titleColor}}>
         h1 {
             color: var(--titleColor);
             font-size: 4rem;
         }
     </style> -->
-  </head>
-  <body>
-    <a href="/">Home</a>
-    <a href="/about/">About</a>
-    <a href="/musings/">Musings</a>
-    <h1>{pageTitle}</h1>
-    
-    <h2>... and what you can find here!</h2>
+</head>
 
-    <p>Here are a few facts about me:</p>
-    <ul>
-      <li>My name is {identity.firstName}.</li>
+<Navigation />
+<h1>{pageTitle}</h1>
+
+<h2>... and what you can find here!</h2>
+
+<p>Here are a few facts about me:</p>
+<ul>
+  <li>My name is {identity.firstName}.</li>
+  <li>
+    I live in {identity.location} and I work as a {identity.occupation}.
+  </li>
+  {
+    identity.hobbies.length >= 2 && (
       <li>
-        I live in {identity.location} and I work as a {identity.occupation}.
+        Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}
       </li>
-      {
-        identity.hobbies.length >= 2 && (
-          <li>
-            Two of my hobbies are: {identity.hobbies[0]} and{" "}
-            {identity.hobbies[1]}
-          </li>
-        )
-      }
-    </ul>
-    <p>My skills are:</p>
-    <ul>
-      {skills.map((skill) => <li>{skill}</li>)}
-    </ul>
-    {finished ? <p>This site is finished.</p> : <p>This site is a work in progress.</p>}
-    {goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
-  </body>
-</html>
+    )
+  }
+</ul>
+<p>My skills are:</p>
+<ul>
+  {skills.map((skill) => <li>{skill}</li>)}
+</ul>
+{
+  finished ? (
+    <p>This site is finished.</p>
+  ) : (
+    <p>This site is a work in progress.</p>
+  )
+}
+<p>This site was last updated on {lastUpdated}.</p>
+<Footer />
