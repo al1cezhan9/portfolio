@@ -1,14 +1,48 @@
-<!DOCTYPE html>
-<a href="/">Home</a>
-<a href="/about/">About</a>
-<a href="/musings/">Musings</a>
+---
+const pageTitle = "About";
+const identity = {
+  firstName: "Alice",
+  location: "Massachusetts",
+  occupation: "Student",
+  hobbies: ["thinking out loud", "thinking in silence", "thinking about thinking"],
+};
+const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
+const finished = false;
+const goal = 3;
+---
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{pageTitle}</title>
+  </head>
+  <body>
+    <a href="/">Home</a>
+    <a href="/about/">About</a>
+    <a href="/musings/">Musings</a>
+    <h1>{pageTitle}</h1>
+    <h2>... and what you can find here!</h2>
 
-
-<html>
-<body>
-    
-    <h1>About</h1>
-    <p>etc.</p>
-
-</body>
+    <p>Here are a few facts about me:</p>
+    <ul>
+      <li>My name is {identity.firstName}.</li>
+      <li>
+        I live in {identity.location} and I work as a {identity.occupation}.
+      </li>
+      {
+        identity.hobbies.length >= 2 && (
+          <li>
+            Two of my hobbies are: {identity.hobbies[0]} and{" "}
+            {identity.hobbies[1]}
+          </li>
+        )
+      }
+    </ul>
+    <p>My skills are:</p>
+    <ul>
+      {skills.map((skill) => <li>{skill}</li>)}
+    </ul>
+    {finished ? <p>This site is finished.</p> : <p>This site is a work in progress.</p>}
+    {goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
+  </body>
 </html>

@@ -1,14 +1,22 @@
-<!DOCTYPE html>
-<a href="/">Home</a>
-<a href="/about/">About</a>
-<a href="/musings/">Musings</a>
+---
+const pageTitle = "Musings";
+---
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>{pageTitle}</title>
+</head>
 
+<nav>
+  <a href="/">Home</a>
+  <a href="/about/">About</a>
+  <a href="/musings/">Musings</a>
+</nav>
 
-<html>
-<body>
-    
-    <h1>Musings</h1>
-    <p>etc.</p>
-
-</body>
-</html>
+<main>
+  <h1>{pageTitle}</h1>
+  <ul>
+    <li><a href="/posts/112525/">11-25-25</a></li>
+    <li><a href="/posts/112625/">11-26-25</a></li>
+  </ul>
+</main>
