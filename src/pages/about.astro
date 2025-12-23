@@ -2,21 +2,10 @@
 import "../styles/global.css";
 import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
-
 const pageTitle = "About";
-const identity = {
-  firstName: "Alice",
-  location: "Massachusetts",
-  occupation: "Student",
-  hobbies: [
-    "thinking out loud",
-    "thinking in silence",
-    "thinking about thinking",
-  ],
-};
-const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
+const skills = ["mechanistic interpretability", "neurosymbolic AI", "prediction markets"];
 const finished = false;
-const lastUpdated = "11-26-2025"
+const lastUpdated = "12-19-2025"
 ---
 
 <head>
@@ -28,26 +17,17 @@ const lastUpdated = "11-26-2025"
 <Navigation />
 <h1>{pageTitle}</h1>
 
-<h2>... and what you can find here!</h2>
-
-<p>Here are a few facts about me:</p>
-<ul>
-  <li>My name is {identity.firstName}.</li>
-  <li>
-    I live in {identity.location} and I work as a {identity.occupation}.
-  </li>
-  {
-    identity.hobbies.length >= 2 && (
-      <li>
-        Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}
-      </li>
-    )
-  }
-</ul>
-<p>My skills are:</p>
+<p>Hello there! I'm glad you've stumbled onto this page. </p>
+<p>Here are some things I like to think about:</p>
 <ul>
   {skills.map((skill) => <li>{skill}</li>)}
 </ul>
+
+
+<Footer />
+
+
+<p>This site was last updated on {lastUpdated}.</p>
 {
   finished ? (
     <p>This site is finished.</p>
@@ -55,5 +35,3 @@ const lastUpdated = "11-26-2025"
     <p>This site is a work in progress.</p>
   )
 }
-<p>This site was last updated on {lastUpdated}.</p>
-<Footer />

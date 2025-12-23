@@ -1,0 +1,21 @@
+---
+import "../styles/global.css";
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+const pageTitle = "Projects";
+const platform = "Github";
+const username = "al1cezhan9";
+---
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>{pageTitle}</title>
+</head>
+
+<Navigation />
+<h1>{pageTitle}</h1>
+
+<p>Learn more about my projects on <a href={`https://www.${platform}.com/${username}`}>{platform}</a>!</p>
+
+<Footer />
+
