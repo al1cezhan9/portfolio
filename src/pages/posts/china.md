@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/BlogLayout.astro
-title: China
+title: East vs. West
 author: AZ
 description: "..."
 pubDate: 2025-12-22

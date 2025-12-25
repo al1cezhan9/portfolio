@@ -26,3 +26,30 @@ a {
   color: #afb0b2; 
 }
 
+
+
+.post {
+  transition: opacity 0.25s ease, filter 0.25s ease;
+}
+
+.post.draft {
+  opacity: 0.35;
+  filter: blur(0.6px);
+}
+
+.post.draft:hover {
+  opacity: 0.6;
+  filter: blur(0.2px);
+}
+
+.draft-label {
+  margin-left: 0.5rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  opacity: 0.6;
+}
+
+.post.draft a {
+  pointer-events: none;
+  cursor: default;
+}

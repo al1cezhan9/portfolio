@@ -6,17 +6,24 @@ import '../styles/global.css'
 
 const pageTitle = "Musings";
 
-// load all blog posts
-const posts = await Astro.glob("./posts/*.md");
-// filter drafts + sort by date
-const publishedPosts = posts
-  .filter(post => !post.frontmatter.draft)
-  .sort(
-    (a, b) =>
-      new Date(b.frontmatter.pubDate).getTime() -
-      new Date(a.frontmatter.pubDate).getTime()
-  );
+// // load all blog posts
+// const posts = await Astro.glob("./posts/*.md");
+// // filter drafts + sort by date
+// const publishedPosts = posts
+//   .filter(post => !post.frontmatter.draft)
+//   .sort(
+//     (a, b) =>
+//       new Date(b.frontmatter.pubDate).getTime() -
+//       new Date(a.frontmatter.pubDate).getTime()
+//   );
 
+const posts = await Astro.glob("./posts/*.md");
+
+const sortedPosts = posts.sort(
+  (a, b) =>
+    new Date(b.frontmatter.pubDate).getTime() -
+    new Date(a.frontmatter.pubDate).getTime()
+);
 ---
 <head>
   <meta charset="utf-8" />
@@ -29,15 +36,24 @@ const publishedPosts = posts
 
 <main>
   <h1>{pageTitle}</h1>
-  <ul>
-    {publishedPosts.map(post => (
-      <li>
-        <a href={post.url}>
-          {post.frontmatter.title}
-        </a>
-      </li>
-    ))}
-  </ul>
+    <ul class="post-list">
+      {sortedPosts.map(post => {
+        const isDraft = post.frontmatter.draft;
+        return (
+          <li class={isDraft ? "post draft" : "post"}>
+            <a
+              href={post.url}
+              aria-disabled={isDraft ? "true" : undefined}
+            >
+            {post.frontmatter.title}
+            </a>
+            {isDraft && (
+              <span class="draft-label">work in progress</span>
+            )}
+          </li>
+        );
+      })}
+    </ul>
 </main>
 
 <Footer />
