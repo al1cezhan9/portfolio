@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/BlogLayout.astro
+layout: /src/layouts/bloglayout.astro
 title: 'The future of AI is Neurosymbolic'
 pubDate: 2025-12-19
 description: 'blah'
