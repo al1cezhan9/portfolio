@@ -1,0 +1,16 @@
+html {
+    background-color: #1e2439;
+    font-family: garamond;
+}
+
+body {
+    color: white;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 80ch;
+    padding: 1rem;
+    line-height: 1.5;
+}
+a {
+    color: #8c6e98ff;
+}

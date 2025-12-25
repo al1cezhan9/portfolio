@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/BlogLayout.astro
 title: 'Alignment really comes down to parenting philosophies'
 pubDate: 2025-12-19
 description: 'blah'
@@ -7,10 +8,13 @@ image:
     url: ''
     alt: ''
 tags: [""]
+draft: true
 ---
-# Parenting
+this post is coming soon... 
 
-I think a lot about parenting. Probably an above average amount for someone of my stature. I think it all comes down to the complexity of power imbalance and information asymmetry that are so core to the process, and how the very same ideas dominate many other modern debates. 
+<!-- # Odd Parallels -->
+
+<!-- I think a lot about parenting. Probably an above average amount for someone of my stature. I think it all comes down to the complexity of power imbalance and information asymmetry that are so core to the process, and how the very same ideas dominate many other modern debates. 
 
 The most obvious manifestation of parenting philosophies holding significance outside of parenting is the parallel in government. The government is all of our parents.<br> 
 Laws = Rules<br>
@@ -36,7 +40,7 @@ Regardless, I strongly believe in intellectual consistency. Don't mind the *tu q
 Vaccines contain traces of the virus they aim to prevent. I think parenting should serve the same purpose. 
 
 
-Open-mindedness
+Open-mindedness -->
 
 
 
