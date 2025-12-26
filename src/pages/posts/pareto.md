@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/BlogLayout.astro
+layout: /src/layouts/BlogLayout.astro
 title: 'How to Exploit the Curse of Dimensionality'
 pubDate: 2025-01-10
 description: 'blah'
