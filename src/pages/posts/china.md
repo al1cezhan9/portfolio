@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/BlogLayout.astro
+layout: ../../layouts/bloglayout.astro
 title: East vs. West
 author: AZ
 description: "..."
