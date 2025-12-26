@@ -1,5 +1,5 @@
 ---
-layout: /src/layouts/bloglayout.astro
+layout: ../../layouts/BlogLayout.astro
 title: 'Alignment x Parenting (Twin Philosophies?)'
 pubDate: 2025-12-19
 description: 'blah'
